@@ -41,7 +41,9 @@ char	*_get_line(char *backup)
 	char	*line;
 
 	i = 0;
-	while (backup[i] != '\n')
+	if (!backup[0])
+		return (NULL);
+	while (backup && backup[i] != '\n')
 		i++;
 	line = (char *)malloc(sizeof(char) * (i + 1));
 	if (!line)

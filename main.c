@@ -9,7 +9,7 @@ int main(void)
 	s = get_next_line(fd);
 	while (s)
 	{
-		printf("%s\n", s);
+		printf("%s\\\n", s);
 		s = get_next_line(fd);
 	}
 	return 0;
