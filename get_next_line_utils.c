@@ -12,13 +12,18 @@
 
 #include "get_next_line.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	int		len;
 	char	*str;
 	int		i;
 	int		j;
 
+	if (!s1)
+	{
+		s1 = (char *)malloc(sizeof(char));
+		s1[0] = 0;
+	}
 	if (!s1 || !s2)
 		return (NULL);
 	len = ft_strlen((char *)s1) + ft_strlen((char *)s2);
@@ -41,6 +46,8 @@ char	*ft_strchr(const char *s, int c)
 	char	chr;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	chr = c;
 	while (s[i] != chr)

@@ -21,7 +21,7 @@ char	*_read(char *backup, int fd)
 	if (!buffer)
 		return (NULL);
 	read_size = 1;
-	while (ft_strchr(backup, '\n') && read_size != 0)
+	while (!ft_strchr(backup, '\n') && read_size != 0)
 	{
 		read_size = read(fd, buffer, BUFFER_SIZE);
 		if (read_size == -1)

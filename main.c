@@ -5,12 +5,12 @@
 int main(void)
 {
 	char *s;
-	int fd = open("text", O_RDWR);
-	s = (char *)1;
+	int fd = open("text.txt", O_RDWR);
+	s = get_next_line(fd);
 	while (s)
 	{
-		s = get_next_line(fd);
 		printf("%s\n", s);
+		s = get_next_line(fd);
 	}
 	return 0;
 }
