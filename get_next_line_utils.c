@@ -35,3 +35,29 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[i] = 0;
 	return (str);
 }
+
+char	*ft_strchr(const char *s, int c)
+{
+	char	chr;
+	int		i;
+
+	i = 0;
+	chr = c;
+	while (s[i] != chr)
+	{
+		if (!s[i])
+			return (NULL);
+		i++;
+	}
+	return ((char *)s + i);
+}
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	ret;
+
+	ret = 0;
+	while (s[ret])
+		ret++;
+	return (ret);
+}

@@ -19,11 +19,12 @@
 # include <fcntl.h>
 # include <limits.h>
 
-typedef struct s_backup{
-	char	*ptr;
-	
-}t_backup;
-
+char	*get_next_line(int fd);
+char	*_read(char *backup, int fd);
+char	*_get_line(char *backup);
+char	*_next(char *backup);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strchr(const char *s, int c);
+size_t	ft_strlen(const char *s);
 
 #endif
