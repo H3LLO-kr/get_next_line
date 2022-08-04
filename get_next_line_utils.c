@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 19:20:36 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/08/04 16:54:28 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/08/04 17:33:08 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (s2[j])
 		str[i++] = s2[j++];
 	str[i] = 0;
+	free(s1);
 	return (str);
 }
 
