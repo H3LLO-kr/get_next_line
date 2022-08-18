@@ -26,5 +26,6 @@ char	*_next(char *backup);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
+void	*ft_calloc(size_t count, size_t size);
 
 #endif
