@@ -82,6 +82,7 @@ char	*_next(char *backup)
 	j = 0;
 	while (backup[i])
 		next_backup[j++] = backup[i++];
+	next_backup[j] = 0;
 	free(backup);
 	return (next_backup);
 }
