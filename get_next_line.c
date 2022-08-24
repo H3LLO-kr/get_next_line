@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 14:27:09 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/08/04 17:30:31 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/08/25 02:06:14 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*_read(char *backup, int fd)
 	char	*buffer;
 	int		read_size;
 
-	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	buffer = (char *)ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	if (!buffer)
 		return (NULL);
 	read_size = 1;
@@ -46,18 +46,14 @@ char	*_get_line(char *backup)
 		return (NULL);
 	while (backup[i] && backup[i] != '\n')
 		i++;
-	line = (char *)malloc(sizeof(char) * (i + 1));
+	line = (char *)ft_calloc(i + 2, sizeof(char));
 	if (!line)
 		return (NULL);
 	i = -1;
 	while (backup[++i] && backup[i] != '\n')
 		line[i] = backup[i];
-	if (backup[i] == '\n')
-	{
-		line[i] = backup[i];
-		i++;
-	}
-	line[i] = 0;
+	if (backup[i] && backup[i] == '\n')
+		line[i++] = '\n';
 	return (line);
 }
 
@@ -75,14 +71,13 @@ char	*_next(char *backup)
 		free(backup);
 		return (NULL);
 	}
-	next_backup = (char *)malloc(sizeof(char) * (ft_strlen(backup) - i + 1));
+	next_backup = (char *)ft_calloc(ft_strlen(backup) - i + 1, sizeof(char));
 	if (!next_backup)
 		return (NULL);
 	i++;
 	j = 0;
 	while (backup[i])
 		next_backup[j++] = backup[i++];
-	next_backup[j] = 0;
 	free(backup);
 	return (next_backup);
 }

@@ -6,7 +6,7 @@
 /*   By: chanhapa <chanhapa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 19:20:36 by chanhapa          #+#    #+#             */
-/*   Updated: 2022/08/04 17:33:08 by chanhapa         ###   ########.fr       */
+/*   Updated: 2022/08/25 01:51:18 by chanhapa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	int		j;
 
 	if (!s1)
-		s1 = (char *)ft_calloc(sizeof(char), 1);
+		s1 = (char *)ft_calloc(1, sizeof(char));
 	if (!s1 || !s2)
 		return (NULL);
 	len = ft_strlen((char *)s1) + ft_strlen((char *)s2);
